@@ -1,8 +1,10 @@
-import type { NextConfig } from "next";
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  images: {
+    domains: ['images.unsplash.com', 'randomuser.me'],
+  },
+  reactStrictMode: true,
+  swcMinify: true,
+}
 
-const nextConfig: NextConfig = {
-  /* config options here */
-  reactCompiler: true,
-};
-
-export default nextConfig;
+module.exports = nextConfig
