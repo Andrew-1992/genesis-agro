@@ -57,7 +57,7 @@ export const Services = () => {
       </div>
 
       <div className="container-custom relative z-10">
-        {/* Section Header with Enhanced Styling */}
+        {/* Section Header - Yellow line removed */}
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
@@ -65,16 +65,8 @@ export const Services = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16 md:mb-20"
         >
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={inView ? { scale: 1 } : {}}
-            transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-            className="inline-block mb-4"
-          >
-            <div className="w-12 h-0.5 bg-accent mx-auto"></div>
-          </motion.div>
           <h2 className="mb-4 text-4xl md:text-5xl font-bold text-gray-900">
-            Our Services
+            What We Do
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Comprehensive support for every stage of the agricultural journey
@@ -104,31 +96,18 @@ export const Services = () => {
                 onMouseMove={handleMouseMove}
                 className="relative group"
               >
-                {/* Animated Background Light Effect on Hover */}
-                <motion.div
-                  className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  style={{
-                    background: `radial-gradient(circle at ${mouseX}px ${mouseY}px, rgba(230, 180, 34, 0.2), transparent 70%)`,
-                  }}
-                />
-                
-                {/* Card with Green Background */}
-                <div className={`relative bg-gradient-to-br ${service.bgColor} rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 h-full border border-white/20 group-hover:border-accent/50`}>
+                {/* Card with Green Background - No yellow hover effect */}
+                <div className={`relative bg-gradient-to-br ${service.bgColor} rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 h-full border border-white/20 group-hover:border-white/30`}>
                   {/* Decorative Number Badge */}
                   <div className="absolute top-6 right-6 w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
                     <span className="text-sm font-bold text-white/80">{String(index + 1).padStart(2, '0')}</span>
                   </div>
 
-                  {/* Title with Accent Underline Animation */}
+                  {/* Title - No yellow underline animation */}
                   <div className="relative mb-4 pt-2">
                     <h3 className="text-2xl font-bold text-white group-hover:text-accent transition-colors duration-300">
                       {service.title}
                     </h3>
-                    <motion.div
-                      initial={{ width: 0 }}
-                      animate={hoveredIndex === index ? { width: '40px' } : { width: 0 }}
-                      className="h-0.5 bg-accent mt-2 rounded-full"
-                    />
                   </div>
 
                   {/* Description */}
@@ -136,7 +115,7 @@ export const Services = () => {
                     {service.description}
                   </p>
 
-                  {/* Features List with Staggered Animation */}
+                  {/* Features List */}
                   <div className="space-y-2 mb-6">
                     {service.features.map((feature, idx) => (
                       <motion.div
@@ -166,8 +145,8 @@ export const Services = () => {
                     </button>
                   </motion.div>
 
-                  {/* Decorative Corner Element */}
-                  <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-accent/30 rounded-tr-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  {/* Decorative Corner Element - Removed yellow border */}
+                  <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-white/10 rounded-tr-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
               </motion.div>
             )

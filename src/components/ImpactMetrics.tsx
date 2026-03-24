@@ -5,9 +5,9 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 
 const metrics = [
-  { value: 8200, label: 'Farmers Empowered', suffix: '+' },
-  { value: 12500, label: 'Acres Cultivated', suffix: '+' },
-  { value: 45, label: 'Cooperatives Partnered', suffix: '+' },
+  { value: 50, label: 'Farmers Empowered', suffix: '+' },
+  { value: 115, label: 'Acres Cultivated', suffix: '+' },
+  { value: 5, label: 'Cooperatives Partnered', suffix: '+' },
   { value: 30, label: 'Avg. Income Increase', suffix: '%' },
 ]
 

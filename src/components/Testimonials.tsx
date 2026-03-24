@@ -7,20 +7,20 @@ import { useInView } from 'react-intersection-observer'
 const testimonials = [
   {
     text: "Genesis Agro gave our cooperative the tools and training we needed to double our yields. For the first time, we're selling surplus to the capital. This has transformed our community.",
-    name: "Mary Akech",
-    title: "Women's Farming Group, Bor",
+    name: "Okongo Martin",
+    title: "Farmers Group, Pacidi",
     avatar: "https://randomuser.me/api/portraits/women/44.jpg",
   },
   {
     text: "The training on climate-smart agriculture has been invaluable. Our farmers now know how to adapt to changing weather patterns and still produce abundant harvests.",
-    name: "James Lual",
+    name: "Rashid",
     title: "Cooperative Leader, Juba",
     avatar: "https://randomuser.me/api/portraits/men/32.jpg",
   },
   {
     text: "Genesis Agro's market linkage program opened doors we never knew existed. Our produce now reaches buyers in Uganda and Kenya at fair prices.",
-    name: "Sarah Nyibol",
-    title: "Smallholder Farmer, Wau",
+    name: "Andrew Omol",
+    title: "Smallholder Farmer, Loboni",
     avatar: "https://randomuser.me/api/portraits/women/68.jpg",
   },
 ]

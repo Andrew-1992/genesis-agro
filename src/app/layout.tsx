@@ -1,8 +1,12 @@
+// src/app/layout.tsx
 import type { Metadata } from 'next'
 import { Inter, Inter_Tight } from 'next/font/google'
 import './globals.css'
 import { Navigation } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
+
+// Add Font Awesome CSS
+import '@fortawesome/fontawesome-free/css/all.min.css'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -15,23 +19,13 @@ const interTight = Inter_Tight({
 })
 
 export const metadata: Metadata = {
-  title: 'Genesis Agro Enterprises | Growing South Sudan\'s Future',
+  title: {
+    default: 'Genesis Agro Enterprises | Growing South Sudan\'s Future',
+    template: '%s | Genesis Agro Enterprises'
+  },
   description: 'Empowering farmers, strengthening food security, and building a sustainable agricultural economy in South Sudan.',
-  keywords: 'agriculture, South Sudan, farming, sustainability, food security, agribusiness',
-  openGraph: {
-    title: 'Genesis Agro Enterprises',
-    description: 'Growing South Sudan\'s Future, One Harvest at a Time',
-    url: 'https://genesisagro.com',
-    siteName: 'Genesis Agro Enterprises',
-    images: [
-      {
-        url: '/logo.png',
-        width: 1200,
-        height: 630,
-      },
-    ],
-    locale: 'en_US',
-    type: 'website',
+  icons: {
+    icon: '/favicon.ico',
   },
 }
 
@@ -42,6 +36,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${interTight.variable}`}>
+      <head>
+        {/* Font Awesome CDN - Backup if package doesn't work */}
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        />
+      </head>
       <body className="font-body bg-cream">
         <Navigation />
         <main>{children}</main>

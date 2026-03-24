@@ -12,13 +12,13 @@ export const Footer = () => {
   const [email, setEmail] = useState('')
   const [isSubmitted, setIsSubmitted] = useState(false)
 
-  // Logo configuration - Replace with your actual logo path
-  const logoUrl = '/logo.png' // Place your logo in public/logo.png
-  const useLogo = true // Set to true when you have a logo uploaded
+  // Logo configuration
+  const logoUrl = '/logo.png'
+  const useLogo = true
 
   const handleNewsletterSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    if (email) {
+    if (email && email.includes('@')) {
       setIsSubmitted(true)
       setTimeout(() => setIsSubmitted(false), 3000)
       setEmail('')
@@ -26,249 +26,247 @@ export const Footer = () => {
   }
 
   const footerLinks = {
+    explore: [
+      { name: 'Home', href: '/' },
+      { name: 'About Us', href: '/about' },
+      { name: 'Our Services', href: '/services' },
+      { name: 'Our Impact', href: '/impact' },
+      { name: 'Success Stories', href: '/testimonials' },
+      { name: 'Contact', href: '/contact' },
+    ],
     services: [
-      { name: 'Farm Input Supply', href: '/services' },
+      { name: 'Agriculture Tools', href: '/services' },
       { name: 'Seeds & Fertilizers', href: '/services' },
       { name: 'Veterinary Services', href: '/services' },
       { name: 'Extension Services', href: '/services' },
-      { name: 'Agricultural Research', href: '/services' },
-      { name: 'Consultancy', href: '/services' },
+      { name: 'Research & Consultancy', href: '/services' },
     ],
-    company: [
-      { name: 'About Us', href: '/about' },
-      { name: 'Our Impact', href: '/impact' },
-      { name: 'Testimonials', href: '/testimonials' },
-      { name: 'Careers', href: '/careers' },
-      { name: 'Press', href: '/press' },
+    resources: [
+      { name: 'Blog & Insights', href: '/blog' },
+      { name: 'Case Studies', href: '/case-studies' },
+      { name: 'Research Reports', href: '/reports' },
+      { name: 'FAQ', href: '/faq' },
+      { name: 'Support', href: '/support' },
     ],
   }
 
-  // Updated social links - Only Facebook, X (Twitter), LinkedIn, and Instagram
   const socialLinks = [
-    { 
-      icon: 'fab fa-facebook-f', 
-      href: 'https://facebook.com/genesisagro', 
-      label: 'Facebook', 
-      color: 'hover:bg-[#1877f2]',
-      iconColor: 'text-white'
-    },
-    { 
-      icon: 'fab fa-x-twitter', 
-      href: 'https://twitter.com/genesisagro', 
-      label: 'X (Twitter)', 
-      color: 'hover:bg-[#000000]',
-      iconColor: 'text-white'
-    },
-    { 
-      icon: 'fab fa-linkedin-in', 
-      href: 'https://linkedin.com/company/genesisagro', 
-      label: 'LinkedIn', 
-      color: 'hover:bg-[#0a66c2]',
-      iconColor: 'text-white'
-    },
-    { 
-      icon: 'fab fa-instagram', 
-      href: 'https://instagram.com/genesisagro', 
-      label: 'Instagram', 
-      color: 'hover:bg-[#e4405f]',
-      iconColor: 'text-white'
-    },
+    { icon: 'fa-brands fa-facebook-f', href: 'https://facebook.com/genesisagro', label: 'Facebook' },
+    { icon: 'fa-brands fa-twitter', href: 'https://twitter.com/genesisagro', label: 'Twitter' },
+    { icon: 'fa-brands fa-linkedin-in', href: 'https://linkedin.com/company/genesisagro', label: 'LinkedIn' },
+    { icon: 'fa-brands fa-instagram', href: 'https://instagram.com/genesisagro', label: 'Instagram' },
+    { icon: 'fa-brands fa-youtube', href: 'https://youtube.com/genesisagro', label: 'YouTube' },
   ]
 
   return (
-    <footer className="relative bg-primary-dark text-white overflow-hidden">
-      {/* Decorative Top Border */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent via-accent-light to-accent"></div>
+    <footer className="relative bg-[#0A2418] text-white overflow-hidden">
+      {/* Premium Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0A2418] via-[#123524] to-[#0A2418]"></div>
+      
+      {/* Decorative Top Gradient Line */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent"></div>
       
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-[0.02]">
         <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 2px 2px, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-          backgroundSize: '40px 40px'
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundSize: '30px 30px'
         }}></div>
       </div>
 
-      
-
-      {/* Main Footer Content */}
-      <div className="container-custom pt-12 pb-8">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
-          {/* Brand Column - Logo with Company Name on Right */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.1 }}
-            className="lg:col-span-1"
-          >
-            <Link href="/" className="inline-block group mb-4">
+      <div className="container-custom relative z-10 py-16 md:py-20">
+        {/* Top Section - Newsletter & Brand */}
+        <div className="grid lg:grid-cols-2 gap-12 mb-16 pb-8 border-b border-white/10">
+          {/* Brand Section */}
+          <div>
+            <Link href="/" className="inline-block group mb-6">
               <div className="flex items-center gap-3">
-                {/* Logo Image - No Background Box */}
                 <div className="relative flex items-center justify-center">
                   {useLogo ? (
                     <Image
                       src={logoUrl}
                       alt="Genesis Agro Logo"
-                      width={50}
-                      height={50}
+                      width={48}
+                      height={48}
                       className="object-contain h-12 w-auto"
                       priority
                     />
                   ) : (
-                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
-                      <span className="text-white font-bold">GA</span>
+                    <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center">
+                      <span className="text-primary-dark font-bold text-lg">GA</span>
                     </div>
                   )}
                 </div>
-                
-                {/* Company Name on the Right */}
                 <div className="flex flex-col">
-                  <span className="text-base font-heading font-bold tracking-wide leading-tight text-white group-hover:text-accent transition-colors">
+                  <span className="text-lg font-heading font-bold tracking-tight text-white group-hover:text-accent transition-colors">
                     GENESIS AGRO
                   </span>
-                  <span className="text-[10px] font-body tracking-wider text-white/60 group-hover:text-white/80 transition-colors">
+                  <span className="text-[11px] text-white/50 tracking-wide">
                     ENTERPRISES LTD
                   </span>
                 </div>
               </div>
             </Link>
-            
-            <p className="text-white/60 text-sm leading-relaxed mt-4">
-              Empowering South Sudanese farmers through sustainable agriculture and market access since 2012.
+            <p className="text-white/60 text-sm leading-relaxed max-w-md">
+              Empowering South Sudanese farmers through sustainable agriculture, 
+              innovative solutions, and community-driven development.
             </p>
-          </motion.div>
+          </div>
 
-          {/* Services Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.2 }}
-          >
-            <h4 className="text-lg font-bold mb-4 relative inline-block">
-              Services
-              <div className="absolute -bottom-1 left-0 w-8 h-0.5 bg-accent rounded-full"></div>
+          {/* Newsletter Section */}
+          <div className="lg:pl-8">
+            <h3 className="text-lg font-semibold mb-2">Stay Updated</h3>
+            <p className="text-white/50 text-sm mb-4">
+              Subscribe to our newsletter for the latest insights and updates.
+            </p>
+            <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-3">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter your email"
+                className="flex-1 px-5 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/30 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all duration-300"
+                required
+              />
+              <button
+                type="submit"
+                className="group px-6 py-3 bg-accent text-primary-dark font-medium rounded-xl hover:bg-accent-light transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2 whitespace-nowrap"
+              >
+                <span>Subscribe</span>
+                <i className="fas fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+              </button>
+            </form>
+            {isSubmitted && (
+              <motion.p
+                initial={{ opacity: 0, y: -5 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-accent text-xs mt-3"
+              >
+                ✓ Thanks for subscribing!
+              </motion.p>
+            )}
+          </div>
+        </div>
+
+        {/* Main Footer Links - Clean 4 Column Layout */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
+          {/* Explore Column */}
+          <div>
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-white/40 mb-4">
+              Explore
             </h4>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
+              {footerLinks.explore.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className="text-white/60 text-sm hover:text-accent transition-colors duration-300 inline-flex items-center gap-1 group"
+                  >
+                    <span className="group-hover:translate-x-1 transition-transform">{link.name}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Services Column */}
+          <div>
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-white/40 mb-4">
+              Services
+            </h4>
+            <ul className="space-y-3">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
                     className="text-white/60 text-sm hover:text-accent transition-colors duration-300 inline-flex items-center gap-1 group"
                   >
-                    <i className="fas fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all group-hover:translate-x-0 -translate-x-2"></i>
                     <span className="group-hover:translate-x-1 transition-transform">{link.name}</span>
                   </Link>
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </div>
 
-          {/* Company Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.3 }}
-          >
-            <h4 className="text-lg font-bold mb-4 relative inline-block">
-              Company
-              <div className="absolute -bottom-1 left-0 w-8 h-0.5 bg-accent rounded-full"></div>
+          {/* Resources Column */}
+          <div>
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-white/40 mb-4">
+              Resources
             </h4>
-            <ul className="space-y-2">
-              {footerLinks.company.map((link) => (
+            <ul className="space-y-3">
+              {footerLinks.resources.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
                     className="text-white/60 text-sm hover:text-accent transition-colors duration-300 inline-flex items-center gap-1 group"
                   >
-                    <i className="fas fa-chevron-right text-[8px] opacity-0 group-hover:opacity-100 transition-all group-hover:translate-x-0 -translate-x-2"></i>
                     <span className="group-hover:translate-x-1 transition-transform">{link.name}</span>
                   </Link>
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </div>
 
           {/* Contact Column */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.4 }}
-            className="lg:col-span-1"
-          >
-            <h4 className="text-lg font-bold mb-4 relative inline-block">
-              Contact Info
-              <div className="absolute -bottom-1 left-0 w-8 h-0.5 bg-accent rounded-full"></div>
+          <div>
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-white/40 mb-4">
+              Contact
             </h4>
             <ul className="space-y-3">
               <li className="flex items-start gap-3 text-white/60 text-sm group">
-                <i className="fas fa-map-marker-alt text-accent mt-0.5 group-hover:scale-110 transition-transform"></i>
-                <span>Juba, South Sudan</span>
+                <i className="fas fa-map-marker-alt text-accent text-sm mt-0.5"></i>
+                <span>7Eleven Gudele Road, Juba, South Sudan</span>
               </li>
               <li className="flex items-center gap-3 text-white/60 text-sm group">
-                <i className="fas fa-phone text-accent group-hover:scale-110 transition-transform"></i>
-                <a href="tel:+211912345678" className="hover:text-accent transition">+211 912 345 678</a>
+                <i className="fas fa-phone text-accent text-sm"></i>
+                <a href="tel:+211922394689" className="hover:text-accent transition">+211 922 394 689</a>
               </li>
               <li className="flex items-center gap-3 text-white/60 text-sm group">
-                <i className="fas fa-envelope text-accent group-hover:scale-110 transition-transform"></i>
+                <i className="fas fa-envelope text-accent text-sm"></i>
                 <a href="mailto:info@genesisagro.com" className="hover:text-accent transition">info@genesisagro.com</a>
               </li>
             </ul>
-            
-            {/* Office Hours */}
-            <div className="mt-6 pt-6 border-t border-white/10">
-              <h5 className="text-sm font-semibold mb-2">Office Hours</h5>
-              <p className="text-white/60 text-xs">Monday - Friday: 8:00 AM - 5:00 PM</p>
-              <p className="text-white/60 text-xs">Saturday: 9:00 AM - 1:00 PM</p>
-              <p className="text-white/60 text-xs">Sunday: Closed</p>
-            </div>
-          </motion.div>
+          </div>
         </div>
 
-        {/* Social Media Links - Only 4 Platforms */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.5 }}
-          className="py-10 border-t border-white/10"
-        >
-          <div className="text-center">
-            <p className="text-white/50 text-sm uppercase tracking-wider mb-6">Connect With Us</p>
-            <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+        {/* Bottom Section - Social & Copyright */}
+        <div className="pt-8 border-t border-white/10">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            {/* Social Media Icons - Now with enhanced visibility */}
+            <div className="flex items-center gap-4">
               {socialLinks.map((social) => (
-                <motion.div
+                <motion.a
                   key={social.label}
-                  whileHover={{ scale: 1.1 }}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ y: -3, scale: 1.15 }}
                   whileTap={{ scale: 0.95 }}
+                  className="group"
+                  aria-label={social.label}
                 >
-                  <Link
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`group relative w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/10 flex items-center justify-center transition-all duration-300 hover:shadow-xl ${social.color}`}
-                    aria-label={social.label}
-                  >
-                    <i className={`${social.icon} text-xl md:text-2xl group-hover:scale-110 transition-transform ${social.iconColor}`}></i>
-                    
-                    {/* Tooltip on Hover */}
-                    <span className="absolute -top-10 left-1/2 transform -translate-x-1/2 px-3 py-1.5 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none shadow-lg z-20">
-                      {social.label}
-                    </span>
-                  </Link>
-                </motion.div>
+                  <div className="w-10 h-10 rounded-full bg-white/15 hover:bg-white/25 flex items-center justify-center transition-all duration-300 shadow-md hover:shadow-lg">
+                    <i className={`${social.icon} text-lg text-white group-hover:text-accent transition-colors`}></i>
+                  </div>
+                </motion.a>
               ))}
             </div>
-          </div>
-        </motion.div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-white/10 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-white/40 text-xs">
-              <p>&copy; {new Date().getFullYear()} Genesis Agro Enterprises Ltd. All rights reserved.</p>
+            {/* Copyright */}
+            <div className="text-center">
+              <p className="text-white/30 text-xs">
+                © {new Date().getFullYear()} GENESIS AGRO ENTERPRISES. All rights reserved.
+              </p>
+              <p className="text-white/20 text-[10px] mt-1">
+                Designed by Faida Technologies SS
+              </p>
             </div>
-            <div className="flex gap-6 text-xs">
-              <Link href="/privacy" className="text-white/40 hover:text-accent transition">Privacy Policy</Link>
-              <Link href="/terms" className="text-white/40 hover:text-accent transition">Terms of Service</Link>
-              <Link href="/cookies" className="text-white/40 hover:text-accent transition">Cookie Policy</Link>
+
+            {/* Legal Links */}
+            <div className="flex gap-5 text-xs">
+              <Link href="/privacy" className="text-white/30 hover:text-accent transition">Privacy</Link>
+              <Link href="/terms" className="text-white/30 hover:text-accent transition">Terms</Link>
+              <Link href="/cookies" className="text-white/30 hover:text-accent transition">Cookies</Link>
             </div>
           </div>
         </div>
@@ -280,10 +278,10 @@ export const Footer = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1 }}
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="fixed bottom-8 right-8 w-12 h-12 bg-accent text-primary-dark rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 z-50 flex items-center justify-center group"
+        className="fixed bottom-8 right-8 w-11 h-11 bg-accent/90 backdrop-blur-sm text-primary-dark rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 hover:bg-accent z-50 flex items-center justify-center group"
         aria-label="Scroll to top"
       >
-        <i className="fas fa-arrow-up group-hover:-translate-y-1 transition-transform"></i>
+        <i className="fas fa-arrow-up text-sm group-hover:-translate-y-0.5 transition-transform"></i>
       </motion.button>
     </footer>
   )

@@ -8,7 +8,13 @@ import { useState } from 'react'
 import Link from 'next/link'
 
 export default function TestimonialsPage() {
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 })
+  // Create separate refs for each section
+  const [statsRef, statsInView] = useInView({ triggerOnce: true, threshold: 0.1 })
+  const [filtersRef] = useInView({ triggerOnce: true, threshold: 0.1 })
+  const [testimonialsRef, testimonialsInView] = useInView({ triggerOnce: true, threshold: 0.1 })
+  const [videosRef, videosInView] = useInView({ triggerOnce: true, threshold: 0.1 })
+  const [ctaRef, ctaInView] = useInView({ triggerOnce: true, threshold: 0.1 })
+  
   const [filter, setFilter] = useState('all')
 
   const testimonials = [
@@ -96,7 +102,7 @@ export default function TestimonialsPage() {
       {/* Hero Section */}
       <section className="relative py-20 md:py-28 bg-gradient-to-br from-primary-dark to-primary overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--accent)_0%,_transparent_70%)]"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_#E6B422_0%,_transparent_70%)]"></div>
         </div>
         <div className="container-custom relative z-10">
           <motion.div
@@ -105,7 +111,7 @@ export default function TestimonialsPage() {
             transition={{ duration: 0.6 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <h1 className="text-white mb-6">Success Stories</h1>
+            <h1 className="text-white mb-6 text-4xl md:text-5xl lg:text-6xl font-bold">Success Stories</h1>
             <p className="text-xl text-white/90 leading-relaxed">
               Hear from the farmers, partners, and communities we've worked with
             </p>
@@ -114,7 +120,7 @@ export default function TestimonialsPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-white">
+      <section ref={statsRef} className="py-16 bg-white">
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
@@ -126,12 +132,16 @@ export default function TestimonialsPage() {
               <motion.div
                 key={stat.label}
                 initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: index * 0.1 }}
-                className="text-center"
+                animate={statsInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                className="text-center group cursor-pointer"
               >
-                <i className={`fas ${stat.icon} text-3xl text-accent mb-3 inline-block`}></i>
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-1">{stat.value}</div>
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-primary/20 transition-all duration-300 group-hover:scale-110">
+                  <i className={`fas ${stat.icon} text-2xl text-accent`}></i>
+                </div>
+                <div className="text-3xl md:text-4xl font-bold text-primary mb-1 group-hover:scale-105 transition-transform">
+                  {stat.value}
+                </div>
                 <div className="text-sm text-gray-500">{stat.label}</div>
               </motion.div>
             ))}
@@ -140,7 +150,7 @@ export default function TestimonialsPage() {
       </section>
 
       {/* Filter Tabs */}
-      <section className="py-8 bg-cream">
+      <section ref={filtersRef} className="py-8 bg-cream">
         <div className="container-custom">
           <div className="flex flex-wrap justify-center gap-3">
             {categories.map((cat) => (
@@ -149,8 +159,8 @@ export default function TestimonialsPage() {
                 onClick={() => setFilter(cat.id)}
                 className={`px-6 py-3 rounded-full font-medium transition-all duration-300 flex items-center gap-2 ${
                   filter === cat.id
-                    ? 'bg-primary text-white shadow-lg'
-                    : 'bg-white text-gray-600 hover:bg-primary/10'
+                    ? 'bg-primary text-white shadow-lg scale-105'
+                    : 'bg-white text-gray-600 hover:bg-primary/10 hover:scale-105'
                 }`}
               >
                 <i className={`fas ${cat.icon}`}></i>
@@ -162,51 +172,53 @@ export default function TestimonialsPage() {
       </section>
 
       {/* Testimonials Grid */}
-      <section className="py-20 bg-cream">
+      <section ref={testimonialsRef} className="py-20 bg-cream">
         <div className="container-custom">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredTestimonials.map((testimonial, index) => (
               <motion.div
                 key={testimonial.id}
                 initial={{ opacity: 0, y: 30 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+                animate={testimonialsInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 group hover:-translate-y-1"
               >
                 {/* Rating Stars */}
-                <div className="flex mb-4">
+                <div className="flex mb-4 gap-1">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <i key={i} className="fas fa-star text-accent text-sm"></i>
                   ))}
                 </div>
                 
                 {/* Quote Icon */}
-                <i className="fas fa-quote-left text-3xl text-primary/20 mb-4 inline-block"></i>
+                <i className="fas fa-quote-left text-3xl text-primary/20 mb-4 inline-block group-hover:text-primary/30 transition-colors"></i>
                 
                 {/* Testimonial Content */}
-                <p className="text-gray-600 leading-relaxed mb-6">
+                <p className="text-gray-600 leading-relaxed mb-6 line-clamp-4">
                   "{testimonial.content}"
                 </p>
                 
                 {/* Author Info */}
                 <div className="flex items-center gap-4 pt-4 border-t border-gray-100">
-                  <div className="relative w-12 h-12 rounded-full overflow-hidden">
+                  <div className="relative w-12 h-12 rounded-full overflow-hidden ring-2 ring-accent/20 group-hover:ring-accent/50 transition-all">
                     <Image
                       src={testimonial.image}
                       alt={testimonial.name}
                       fill
                       className="object-cover"
+                      sizes="48px"
                     />
                   </div>
                   <div>
-                    <h4 className="font-bold text-primary">{testimonial.name}</h4>
+                    <h4 className="font-bold text-primary group-hover:text-primary-dark transition-colors">{testimonial.name}</h4>
                     <p className="text-sm text-gray-500">{testimonial.role}</p>
                     <p className="text-xs text-gray-400">{testimonial.location}</p>
                   </div>
                 </div>
                 
                 {/* Date */}
-                <div className="mt-3 text-xs text-gray-400">
+                <div className="mt-3 text-xs text-gray-400 flex items-center gap-1">
+                  <i className="fas fa-calendar-alt text-accent text-[10px]"></i>
                   {testimonial.date}
                 </div>
               </motion.div>
@@ -214,22 +226,34 @@ export default function TestimonialsPage() {
           </div>
           
           {filteredTestimonials.length === 0 && (
-            <div className="text-center py-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-center py-12"
+            >
+              <i className="fas fa-inbox text-5xl text-gray-300 mb-4 inline-block"></i>
               <p className="text-gray-500">No testimonials found for this category.</p>
-            </div>
+              <button
+                onClick={() => setFilter('all')}
+                className="mt-4 text-primary hover:text-accent transition-colors"
+              >
+                View all stories
+              </button>
+            </motion.div>
           )}
         </div>
       </section>
 
       {/* Video Testimonials */}
-      <section className="py-20 bg-white">
+      <section ref={videosRef} className="py-20 bg-white">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
+            animate={videosInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Watch Their Stories</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Watch Their Stories</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Hear directly from farmers about their transformation journey
             </p>
@@ -237,34 +261,37 @@ export default function TestimonialsPage() {
           
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { title: 'Mary\'s Journey to Success', duration: '3:45', thumbnail: 'https://images.unsplash.com/photo-1593113598332-cd288d649433' },
-              { title: 'Cooperative Transformation', duration: '4:20', thumbnail: 'https://images.unsplash.com/photo-1535463731090-e34f4b5098f6' },
-              { title: 'Youth in Agriculture', duration: '5:10', thumbnail: 'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b' },
+              { title: 'Mary\'s Journey to Success', duration: '3:45', thumbnail: 'https://images.unsplash.com/photo-1593113598332-cd288d649433?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+              { title: 'Cooperative Transformation', duration: '4:20', thumbnail: 'https://images.unsplash.com/photo-1535463731090-e34f4b5098f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+              { title: 'Youth in Agriculture', duration: '5:10', thumbnail: 'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
             ].map((video, index) => (
               <motion.div
                 key={video.title}
                 initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: index * 0.1 }}
+                animate={videosInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
                 className="group cursor-pointer"
               >
-                <div className="relative h-48 rounded-xl overflow-hidden mb-4">
+                <div className="relative h-48 rounded-xl overflow-hidden mb-4 shadow-md group-hover:shadow-xl transition-all duration-300">
                   <Image
                     src={video.thumbnail}
                     alt={video.title}
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
-                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                    <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <i className="fas fa-play text-primary-dark"></i>
+                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/50 transition-all">
+                    <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <i className="fas fa-play text-primary-dark text-sm ml-0.5"></i>
                     </div>
                   </div>
-                  <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
+                  <div className="absolute bottom-2 right-2 bg-black/80 text-white text-xs px-2 py-1 rounded-md backdrop-blur-sm">
                     {video.duration}
                   </div>
                 </div>
-                <h3 className="font-semibold text-center">{video.title}</h3>
+                <h3 className="font-semibold text-center text-gray-800 group-hover:text-primary transition-colors">
+                  {video.title}
+                </h3>
               </motion.div>
             ))}
           </div>
@@ -272,18 +299,26 @@ export default function TestimonialsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-primary relative overflow-hidden">
+      <section ref={ctaRef} className="py-20 bg-primary relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_#E6B422_0%,_transparent_70%)]"></div>
+        </div>
         <div className="container-custom relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
+            animate={ctaInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
           >
             <h2 className="text-white text-3xl md:text-4xl font-bold mb-4">Share Your Story</h2>
             <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
               Have you been impacted by our work? We'd love to hear your story.
             </p>
-            <Link href="/contact" className="btn-primary bg-accent text-primary-dark hover:bg-accent-light inline-block">
+            <Link 
+              href="/contact" 
+              className="inline-flex items-center gap-2 px-8 py-3 bg-accent text-primary-dark font-semibold rounded-full hover:bg-accent-light transition-all duration-300 shadow-lg hover:shadow-xl group"
+            >
               Share Your Experience
+              <i className="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
             </Link>
           </motion.div>
         </div>
