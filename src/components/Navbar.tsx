@@ -27,7 +27,6 @@ export const Navigation = () => {
     { href: '/about', label: 'About Us', description: 'Our story & mission' },
     { href: '/services', label: 'Services', description: 'What we offer' },
     { href: '/impact', label: 'Impact', description: 'Making a difference' },
-    { href: '/testimonials', label: 'Testimonials', description: 'Success stories' },
     { href: '/contact', label: 'Contact Us', description: 'Get in touch' },
   ]
 

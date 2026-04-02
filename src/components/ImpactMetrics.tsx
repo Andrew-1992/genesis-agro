@@ -6,7 +6,7 @@ import { useInView } from 'react-intersection-observer'
 
 const metrics = [
   { value: 50, label: 'Farmers Empowered', suffix: '+' },
-  { value: 115, label: 'Acres Cultivated', suffix: '+' },
+  { value: 15, label: 'Acres Cultivated', suffix: '+' },
   { value: 5, label: 'Cooperatives Partnered', suffix: '+' },
   { value: 30, label: 'Avg. Income Increase', suffix: '%' },
 ]

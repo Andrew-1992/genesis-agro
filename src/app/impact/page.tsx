@@ -10,8 +10,8 @@ export default function ImpactPage() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 })
 
   const stats = [
-    { value: 80, label: 'Farmers Empowered', suffix: '+', icon: 'fas fa-users' },
-    { value: 100, label: 'Acres Cultivated', suffix: '+', icon: 'fas fa-leaf' },
+    { value: 5, label: 'Farmers Empowered', suffix: '+', icon: 'fas fa-users' },
+    { value: 15, label: 'Acres Cultivated', suffix: '+', icon: 'fas fa-leaf' },
     { value: 5, label: 'Cooperatives Partnered', suffix: '+', icon: 'fas fa-handshake' },
     { value: 30, label: 'Average Income Increase', suffix: '%', icon: 'fas fa-chart-line' },
     { value: 40, label: 'Jobs Created', suffix: '+', icon: 'fas fa-briefcase' },
@@ -164,7 +164,7 @@ export default function ImpactPage() {
               <ul className="space-y-3 mb-6">
                 <li className="flex items-center gap-3">
                   <i className="fas fa-tree text-accent"></i>
-                  <span>10,000+ trees planted for agroforestry</span>
+                  <span>500+ trees planted for agroforestry</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <i className="fas fa-tint text-accent"></i>
@@ -176,7 +176,7 @@ export default function ImpactPage() {
                 </li>
                 <li className="flex items-center gap-3">
                   <i className="fas fa-recycle text-accent"></i>
-                  <span>Organic farming practices adopted by 2,000+ farmers</span>
+                  <span>Organic farming practices adopted by 20+ farmers</span>
                 </li>
               </ul>
             </motion.div>
