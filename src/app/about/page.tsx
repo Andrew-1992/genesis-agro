@@ -16,23 +16,23 @@ export default function AboutPage() {
 
   const teamMembers = [
     {
-      name: 'Obaa John Atanasio',
+      name: 'Oba John Atanasio',
       role: 'Founder & CEO',
       bio: 'Agricultural economist with 5+ years of experience in East African agriculture.',
-      image: 'https://randomuser.me/api/portraits/men/1.jpg',
+      image: '/obaa.jpg',
     },
     {
-      name: 'Mary Akech',
+      name: 'Okongo Martin',
       role: 'Head of Operations',
       bio: 'Expert in supply chain management and farmer cooperatives.',
-      image: 'https://randomuser.me/api/portraits/women/2.jpg',
+      image: '/okongo.jpg',
     },
     
     {
-      name: 'Sarah Nyibol',
+      name: 'Andrew Omol',
       role: 'Community Relations',
       bio: 'Passionate about empowering women farmers and community development.',
-      image: 'https://randomuser.me/api/portraits/women/4.jpg',
+      image: '/omol.jpg',
     },
   ]
 
@@ -56,7 +56,7 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <h1 className="text-white mb-6 text-4xl md:text-5xl lg:text-6xl font-bold">About Genesis Agro</h1>
+            <h1 className="text-white mb-6 text-4xl md:text-5xl lg:text-6xl font-bold">About Trans Nile Agro</h1>
             <p className="text-xl text-white/90 leading-relaxed">
               Transforming agriculture in South Sudan through innovation, sustainability, and community empowerment.
             </p>
@@ -74,9 +74,9 @@ export default function AboutPage() {
               transition={{ duration: 0.6 }}
               className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow"
             >
-              <h2 className="text-2xl font-bold mb-4">Our Mission</h2>
+              <h2 className="text-2xl font-bold mb-4">Mission</h2>
               <p className="text-gray-600 leading-relaxed">
-                To empower South Sudanese farmers with sustainable agricultural solutions, market access, and knowledge that transforms livelihoods and ensures food security for future generations.
+                To provide high-quality agricultural inputs, superior veterinary care, and innovative extension services through a dedicated team of experts, ensuring increased productivity and profitability for our clients.
               </p>
             </motion.div>
 
@@ -86,9 +86,9 @@ export default function AboutPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow"
             >
-              <h2 className="text-2xl font-bold mb-4">Our Vision</h2>
+              <h2 className="text-2xl font-bold mb-4">Vision</h2>
               <p className="text-gray-600 leading-relaxed">
-                A food-secure South Sudan where agriculture drives economic growth, environmental sustainability, and prosperity for all farming communities.
+                To be the leading catalyst for agricultural transformation in the region, empowering every farmer with the tools and knowledge to achieve sustainable abundance.
               </p>
             </motion.div>
           </div>
@@ -109,10 +109,10 @@ export default function AboutPage() {
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Advancing Agriculture in South Sudan</h2>
               <p className="text-gray-600 mb-4 leading-relaxed">
-                <strong>Genesis Agro Enterprise Ltd</strong>; emerged from a vision to transform South Sudan's agricultural landscape. We began as a small initiative supporting 10 farmers resulting into a comprehensive agricultural development organization reaching thousands across the nation.
+                <strong>Trans Nile Agro Ltd</strong>; is a multifaceted agricultural enterprise committed to enhancing food security and economic prosperity.
               </p>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Our journey has been marked by resilience, innovation, and an unwavering commitment to the farmers who form the backbone of South Sudan's economy. Through conflict, climate challenges, and economic uncertainty, we've remained steadfast in our mission to empower agricultural communities.
+                We serve as a "one-stop shop" for the modern farmer, providing everything from high-quality seeds and veterinary medicines to expert consultancy. Our integrated approach ensures that our clients don't just farm —they thrive, with access to the best resources and knowledge in the industry. With a focus on sustainability and community empowerment, we are dedicated to transforming agriculture in South Sudan and beyond.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <div className="border-l-4 border-accent pl-4">

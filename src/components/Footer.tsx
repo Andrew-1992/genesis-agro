@@ -13,7 +13,7 @@ export const Footer = () => {
   const [isSubmitted, setIsSubmitted] = useState(false)
 
   // Logo configuration
-  const logoUrl = '/logo.png'
+  const logoUrl = '/logo-v5.png' // Replace with your actual logo path
   const useLogo = true
 
   const handleNewsletterSubmit = (e: React.FormEvent) => {
@@ -35,10 +35,10 @@ export const Footer = () => {
       { name: 'Contact', href: '/contact' },
     ],
     services: [
-      { name: 'Agriculture Tools', href: '/services' },
-      { name: 'Seeds & Fertilizers', href: '/services' },
-      { name: 'Veterinary Services', href: '/services' },
-      { name: 'Extension Services', href: '/services' },
+      { name: 'Agriculture Inputs & Equipment', href: '/services' },
+      { name: 'Farming & Production', href: '/services' },
+      { name: 'Veterinary Drugs', href: '/services' },
+      { name: 'Extension & Veterinary Services', href: '/services' },
       { name: 'Research & Consultancy', href: '/services' },
     ],
     resources: [
@@ -77,10 +77,11 @@ export const Footer = () => {
       <div className="container-custom relative z-10 py-16 md:py-20">
         {/* Top Section - Newsletter & Brand */}
         <div className="grid lg:grid-cols-2 gap-12 mb-16 pb-8 border-b border-white/10">
-          {/* Brand Section */}
+          {/* Brand Section - No White Box */}
           <div>
             <Link href="/" className="inline-block group mb-6">
               <div className="flex items-center gap-3">
+                {/* Logo - Clean without white background */}
                 <div className="relative flex items-center justify-center">
                   {useLogo ? (
                     <Image
@@ -92,17 +93,19 @@ export const Footer = () => {
                       priority
                     />
                   ) : (
-                    <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center">
-                      <span className="text-primary-dark font-bold text-lg">GA</span>
+                    // Text fallback without white box
+                    <div className="flex items-center gap-2">
+                      <span className="text-accent text-2xl font-bold">G</span>
+                      <span className="text-white text-2xl font-bold">A</span>
                     </div>
                   )}
                 </div>
                 <div className="flex flex-col">
                   <span className="text-lg font-heading font-bold tracking-tight text-white group-hover:text-accent transition-colors">
-                    GENESIS AGRO
+                    TRANS NILE AGRO LTD
                   </span>
                   <span className="text-[11px] text-white/50 tracking-wide">
-                    ENTERPRISES LTD
+                    
                   </span>
                 </div>
               </div>
@@ -232,7 +235,7 @@ export const Footer = () => {
         {/* Bottom Section - Social & Copyright */}
         <div className="pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            {/* Social Media Icons - Now with enhanced visibility */}
+            {/* Social Media Icons */}
             <div className="flex items-center gap-4">
               {socialLinks.map((social) => (
                 <motion.a
@@ -255,10 +258,10 @@ export const Footer = () => {
             {/* Copyright */}
             <div className="text-center">
               <p className="text-white/30 text-xs">
-                © {new Date().getFullYear()} GENESIS AGRO ENTERPRISES. All rights reserved.
+                © {new Date().getFullYear()} GENESIS AGRO ENTERPRISE LTD. All rights reserved.
               </p>
               <p className="text-white/20 text-[10px] mt-1">
-                Designed by Faida Technologies SS
+                Empowering South Sudanese Agriculture
               </p>
             </div>
 

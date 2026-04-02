@@ -10,19 +10,19 @@ export default function ImpactPage() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 })
 
   const stats = [
-    { value: 8200, label: 'Farmers Empowered', suffix: '+', icon: 'fas fa-users' },
-    { value: 12500, label: 'Acres Cultivated', suffix: '+', icon: 'fas fa-leaf' },
-    { value: 45, label: 'Cooperatives Partnered', suffix: '+', icon: 'fas fa-handshake' },
+    { value: 80, label: 'Farmers Empowered', suffix: '+', icon: 'fas fa-users' },
+    { value: 100, label: 'Acres Cultivated', suffix: '+', icon: 'fas fa-leaf' },
+    { value: 5, label: 'Cooperatives Partnered', suffix: '+', icon: 'fas fa-handshake' },
     { value: 30, label: 'Average Income Increase', suffix: '%', icon: 'fas fa-chart-line' },
-    { value: 150, label: 'Jobs Created', suffix: '+', icon: 'fas fa-briefcase' },
-    { value: 5000, label: 'Tons of Food Produced', suffix: '+', icon: 'fas fa-apple-alt' },
+    { value: 40, label: 'Jobs Created', suffix: '+', icon: 'fas fa-briefcase' },
+    { value: 1000, label: 'Tons of Food Produced', suffix: '+', icon: 'fas fa-apple-alt' },
   ]
 
   const stories = [
     {
       name: 'Mary Akech',
       location: 'Bor, South Sudan',
-      story: 'Before Genesis Agro, I struggled to feed my family. After receiving training and quality seeds, my yields doubled. Now I sell surplus to local markets and send my children to school.',
+      story: 'Before Trans Nile Agro, I struggled to feed my family. After receiving training and quality seeds, my yields doubled. Now I sell surplus to local markets and send my children to school.',
       image: 'https://randomuser.me/api/portraits/women/44.jpg',
       before: '2 acres, low yield',
       after: '5 acres, surplus production',
@@ -30,7 +30,7 @@ export default function ImpactPage() {
     {
       name: 'James Lual',
       location: 'Juba, South Sudan',
-      story: 'The irrigation system installed by Genesis Agro changed everything. I now farm year-round instead of waiting for rains. My income has increased by 40%.',
+      story: 'The irrigation system installed by Trans Nile Agro changed everything. I now farm year-round instead of waiting for rains. My income has increased by 40%.',
       image: 'https://randomuser.me/api/portraits/men/32.jpg',
       before: 'Rain-fed only',
       after: 'Year-round farming',
@@ -38,7 +38,7 @@ export default function ImpactPage() {
     {
       name: 'Sarah Nyibol',
       location: 'Wau, South Sudan',
-      story: 'Through the women\'s cooperative supported by Genesis Agro, we\'ve gained market access we never had before. We\'re now supplying hotels in Juba.',
+      story: 'Through the women\'s cooperative supported by Trans Nile Agro, we\'ve gained market access we never had before. We\'re now supplying hotels in Juba.',
       image: 'https://randomuser.me/api/portraits/women/68.jpg',
       before: 'Local market only',
       after: 'Regional distribution',

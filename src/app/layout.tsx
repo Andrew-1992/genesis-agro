@@ -20,12 +20,12 @@ const interTight = Inter_Tight({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Genesis Agro Enterprises | Growing South Sudan\'s Future',
-    template: '%s | Genesis Agro Enterprises'
+    default: 'Trans Nile Agro Ltd | Growing South Sudan\'s Future',
+    template: '%s | Trans Nile Agro Ltd'
   },
   description: 'Empowering farmers, strengthening food security, and building a sustainable agricultural economy in South Sudan.',
   icons: {
-    icon: '/favicon.ico',
+    icon: '/logo-v5.png',
   },
 }
 

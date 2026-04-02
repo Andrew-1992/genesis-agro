@@ -43,7 +43,7 @@ export default function ContactPage() {
   const contactInfo = [
     { icon: 'fa-solid fa-location-dot', title: 'Visit Us', details: ['7Eleven Gudele Road, Juba, South Sudan'] },
     { icon: 'fa-solid fa-phone', title: 'Call Us', details: ['+211 922 394 689'] },
-    { icon: 'fa-solid fa-envelope', title: 'Email Us', details: ['info@genesisagro.com'] },
+    { icon: 'fa-solid fa-envelope', title: 'Email Us', details: ['info@transnileagro.com'] },
     { icon: 'fa-solid fa-clock', title: 'Office Hours', details: ['Mon-Fri: 8:00 AM - 5:00 PM', 'Sat: 9:00 AM - 1:00 PM', 'Sun: Closed'] },
   ]
 

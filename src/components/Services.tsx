@@ -7,28 +7,28 @@ import { useState } from 'react'
 
 const services = [
   {
-    title: 'Agriculture Tools',
-    description: 'High-quality, durable farming equipment including plows, hoes, pruning shears, and modern mechanized tools for efficient farming.',
+    title: 'Agriculture Inputs & Equipment',
+    description: 'We source and distribute premium products to ensure your farm has the best foundation.',
     bgColor: 'from-primary to-primary-light',
-    features: ['Hand Tools', 'Mechanized Equipment', 'Maintenance Services'],
+    features: ['Hand Tools', 'High-Quality Seeds', 'Organic pesticides & Herbicides'],
   },
   {
-    title: 'Agriculture Seeds & Fertilizers',
-    description: 'Premium seeds of drought-resistant crops and organic fertilizers tailored for South Sudan\'s unique climate and soil conditions.',
+    title: 'Farming & Production',
+    description: 'We engage in large-scale crop production, and livestock rearing, utilizing the best practices we recommend to our clients.',
     bgColor: 'from-primary-dark to-primary',
-    features: ['Hybrid Seeds', 'Organic Fertilizers', 'Soil Testing'],
+    features: ['Indoor farms (Greenhouse Farming)', 'Urban Farming', 'Open Field Farming'],
   },
   {
-    title: 'Veterinary Drugs & Tools',
+    title: 'Veterinary Drugs',
     description: 'Complete veterinary care solutions including vaccines, antibiotics, and diagnostic tools for livestock health management.',
     bgColor: 'from-primary to-primary-light',
     features: ['Vaccines', 'Treatment Protocols', 'Livestock Care'],
   },
   {
-    title: 'Agriculture Extension Services',
-    description: 'Expert training and advisory services on modern farming techniques, post-harvest handling, and sustainable practices.',
+    title: 'Extension & Veterinary Services',
+    description: 'Our mobile team of experts brings the "lab to the land"',
     bgColor: 'from-primary-dark to-primary',
-    features: ['Field Training', 'Technical Support', 'Best Practices'],
+    features: ['Field Training', 'Soil Testing', 'Technical Support', 'Treatment & Vaccination'],
   },
   {
     title: 'Agricultural Research',
@@ -37,10 +37,10 @@ const services = [
     features: ['Crop Research', 'Climate Studies', 'Innovation Labs'],
   },
   {
-    title: 'Agriculture Consultancy',
-    description: 'Professional advisory services for farm management, business planning, market analysis, and sustainable agricultural practices.',
+    title: 'Consultancy Services',
+    description: 'We offer professional advisory for investors, and seasoned farmers.',
     bgColor: 'from-primary-dark to-primary',
-    features: ['Farm Planning', 'Business Strategy', 'Market Analysis', 'Sustainability Consulting'],
+    features: ['Feasibility Studies for new projects', 'Farm management auditing & optimization', 'Value chain development & market linkage', 'Sustainability Consulting'],
   },
 ]
 

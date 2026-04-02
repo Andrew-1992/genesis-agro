@@ -17,7 +17,7 @@ export default function ServicesPage() {
 
   const services = [
     {
-      title: 'Agriculture Tools',
+      title: 'Agriculture Inputs & Equipment',
       description: 'High-quality, durable farming equipment including plows, hoes, pruning shears, and modern mechanized tools for efficient farming.',
       features: ['Hand Tools', 'Mechanized Equipment', 'Maintenance Services'],
       icon: 'fas fa-tools',
@@ -25,7 +25,7 @@ export default function ServicesPage() {
       price: 'Custom Pricing',
     },
     {
-      title: 'Agriculture Seeds & Fertilizers',
+      title: 'Farming & Production',
       description: 'Premium seeds of drought-resistant crops and organic fertilizers tailored for South Sudan\'s unique climate and soil conditions.',
       features: ['Hybrid Seeds', 'Organic Fertilizers', 'Soil Testing'],
       icon: 'fas fa-seedling',
@@ -33,7 +33,7 @@ export default function ServicesPage() {
       price: 'Seasonal Rates',
     },
     {
-      title: 'Veterinary Drugs & Tools',
+      title: 'Veterinary Drugs',
       description: 'Complete veterinary care solutions including vaccines, antibiotics, and diagnostic tools for livestock health management.',
       features: ['Vaccines', 'Treatment Protocols', 'Livestock Care'],
       icon: 'fas fa-pills',
@@ -41,7 +41,7 @@ export default function ServicesPage() {
       price: 'Market Price',
     },
     {
-      title: 'Agriculture Extension Services',
+      title: 'Agriculture Extension & Veterinary Services',
       description: 'Expert training and advisory services on modern farming techniques, post-harvest handling, and sustainable practices.',
       features: ['Field Training', 'Technical Support', 'Best Practices'],
       icon: 'fas fa-chalkboard-user',
@@ -57,7 +57,7 @@ export default function ServicesPage() {
       price: 'Project-Based',
     },
     {
-      title: 'Agriculture Consultancy',
+      title: 'Consultancy Services',
       description: 'Professional advisory services for farm management, business planning, market analysis, and sustainable agricultural practices.',
       features: ['Farm Planning', 'Business Strategy', 'Market Analysis', 'Sustainability Consulting'],
       icon: 'fas fa-chart-line',

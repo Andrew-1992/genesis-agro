@@ -32,7 +32,7 @@ export const Navigation = () => {
   ]
 
   // Logo configuration
-  const logoUrl = '/logo.png'
+  const logoUrl = '/logo-v5.png' // Replace with your actual logo path
   const useLogo = true
 
   // Check if link is active
@@ -74,7 +74,7 @@ export const Navigation = () => {
               {useLogo ? (
                 <Image
                   src={logoUrl}
-                  alt="Genesis Agro Logo"
+                  alt="Trans Nile Agro Logo"
                   width={45}
                   height={45}
                   className="object-contain h-11 w-auto"
@@ -96,12 +96,12 @@ export const Navigation = () => {
                   } group-hover:text-accent`}
                   whileHover={{ x: 2 }}
                 >
-                  GENESIS AGRO
+                  TRANS NILE AGRO LTD
                 </motion.span>
                 <span className={`text-[10px] font-body tracking-wider transition-all duration-300 ${
                   isScrolled ? 'text-gray-500' : 'text-white/70'
                 } group-hover:text-primary`}>
-                  ENTERPRISES LTD
+                   
                 </span>
               </div>
             </div>
