@@ -9,19 +9,19 @@ const testimonials = [
     text: "Trans Nile Agro Ltd gave our cooperative the tools and training we needed to double our yields. For the first time, we're selling surplus to the customers. This has transformed our community.",
     name: "Okongo Martin",
     title: "Farmers Group, Pacidi",
-    avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+    avatar: "/okongo.jpg",
   },
   {
     text: "The training on climate-smart agriculture has been invaluable. Our farmers now know how to adapt to changing weather patterns and still produce abundant harvests.",
-    name: "Rashid",
+    name: "Rashid Ali",
     title: "Cooperative Leader, Juba",
-    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+    avatar: "/rashid.jpg",
   },
   {
     text: "Trans Nile Agro Ltd's market linkage program opened doors we never knew existed. Our produce now reaches buyers in Uganda and Kenya at fair prices.",
     name: "Andrew Omol",
     title: "Smallholder Farmer, Loboni",
-    avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+    avatar: "/omol.jpg",
   },
 ]
 

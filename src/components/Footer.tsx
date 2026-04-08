@@ -226,7 +226,7 @@ export const Footer = () => {
               </li>
               <li className="flex items-center gap-3 text-white/60 text-sm group">
                 <i className="fas fa-envelope text-accent text-sm"></i>
-                <a href="mailto:info@genesisagro.com" className="hover:text-accent transition">info@genesisagro.com</a>
+                <a href="mailto:info@transnileagro.com" className="hover:text-accent transition">info@transnileagro.com</a>
               </li>
             </ul>
           </div>
@@ -258,7 +258,7 @@ export const Footer = () => {
             {/* Copyright */}
             <div className="text-center">
               <p className="text-white/30 text-xs">
-                © {new Date().getFullYear()} GENESIS AGRO ENTERPRISE LTD. All rights reserved.
+                © {new Date().getFullYear()} TRANS NILE AGRO LTD. All rights reserved.
               </p>
               <p className="text-white/20 text-[10px] mt-1">
                 Empowering South Sudanese Agriculture

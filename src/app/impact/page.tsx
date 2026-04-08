@@ -10,36 +10,36 @@ export default function ImpactPage() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 })
 
   const stats = [
-    { value: 5, label: 'Farmers Empowered', suffix: '+', icon: 'fas fa-users' },
-    { value: 15, label: 'Acres Cultivated', suffix: '+', icon: 'fas fa-leaf' },
-    { value: 5, label: 'Cooperatives Partnered', suffix: '+', icon: 'fas fa-handshake' },
-    { value: 30, label: 'Average Income Increase', suffix: '%', icon: 'fas fa-chart-line' },
-    { value: 40, label: 'Jobs Created', suffix: '+', icon: 'fas fa-briefcase' },
-    { value: 1000, label: 'Tons of Food Produced', suffix: '+', icon: 'fas fa-apple-alt' },
+    { value: 16, label: 'Farmers Empowered', suffix: '+', icon: 'fas fa-users' },
+    { value: 20, label: 'Acres Cultivated', suffix: '+', icon: 'fas fa-leaf' },
+    { value: 5, label: 'Farmer Groups', suffix: '+', icon: 'fas fa-handshake' },
+    { value: 25, label: 'Average Income Increase', suffix: '%', icon: 'fas fa-chart-line' },
+    { value: 20, label: 'Jobs Created', suffix: '+', icon: 'fas fa-briefcase' },
+    { value: 5, label: 'Tons of Food Produced', suffix: '+', icon: 'fas fa-apple-alt' },
   ]
 
   const stories = [
     {
-      name: 'Mary Akech',
-      location: 'Bor, South Sudan',
+      name: 'Andrew Omol',
+      location: 'Lafon County, South Sudan',
       story: 'Before Trans Nile Agro, I struggled to feed my family. After receiving training and quality seeds, my yields doubled. Now I sell surplus to local markets and send my children to school.',
-      image: 'https://randomuser.me/api/portraits/women/44.jpg',
+      image: '/omol.jpg',
       before: '2 acres, low yield',
       after: '5 acres, surplus production',
     },
     {
-      name: 'James Lual',
-      location: 'Juba, South Sudan',
+      name: 'Rashid Ali',
+      location: 'Yei County, South Sudan',
       story: 'The irrigation system installed by Trans Nile Agro changed everything. I now farm year-round instead of waiting for rains. My income has increased by 40%.',
-      image: 'https://randomuser.me/api/portraits/men/32.jpg',
+      image: '/rashid.jpg',
       before: 'Rain-fed only',
       after: 'Year-round farming',
     },
     {
-      name: 'Sarah Nyibol',
-      location: 'Wau, South Sudan',
+      name: 'Okongo Martin',
+      location: 'Juba County, South Sudan',
       story: 'Through the women\'s cooperative supported by Trans Nile Agro, we\'ve gained market access we never had before. We\'re now supplying hotels in Juba.',
-      image: 'https://randomuser.me/api/portraits/women/68.jpg',
+      image: '/okongo.jpg',
       before: 'Local market only',
       after: 'Regional distribution',
     },

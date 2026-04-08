@@ -151,7 +151,7 @@ export const About = () => {
             <div className="relative rounded-2xl overflow-hidden shadow-xl">
               <div className="relative h-[450px] lg:h-[500px]">
                 <Image
-                  src="/about2.jpg"
+                  src="/oba-in.jpg"
                   alt="Genesis Agro Agriculture Team working with farmers"
                   fill
                   className="object-cover"

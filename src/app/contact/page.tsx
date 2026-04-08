@@ -284,7 +284,7 @@ export default function ContactPage() {
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {[
               { q: 'What areas do you serve?', a: 'We serve farmers across South Sudan, with operations in Juba, Bor, Wau, and surrounding regions.' },
-              { q: 'How can I partner with Genesis Agro?', a: 'Contact our partnership team through the form above or call our office to discuss collaboration opportunities.' },
+              { q: 'How can I partner with Trans Nile Agro?', a: 'Contact our partnership team through the form above or call our office to discuss collaboration opportunities.' },
               { q: 'Do you offer training programs?', a: 'Yes, we offer regular training sessions on sustainable farming practices, post-harvest handling, and business management.' },
               { q: 'What is the cost of your services?', a: 'Pricing varies based on the service. Contact us for a customized quote based on your needs.' },
             ].map((faq, index) => (

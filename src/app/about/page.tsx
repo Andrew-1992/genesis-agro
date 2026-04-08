@@ -37,9 +37,9 @@ export default function AboutPage() {
   ]
 
   const milestones = [
-    { year: '2024', title: 'Founded in Juba', description: 'Started with 50 farmers in Central Equatoria' },
+    { year: '2024', title: 'Founded in Juba', description: 'Started with 5 farmers in Central Equatoria' },
     { year: '2025', title: 'Digital Innovation', description: 'Launched mobile advisory services for farmers' },
-    { year: '2026', title: 'Impact Milestone', description: 'Empowered 8,200+ farmers nationwide' },
+    { year: '2026', title: 'Impact Milestone', description: 'Empowered 50+ farmers nationwide' },
   ]
 
   return (
@@ -120,7 +120,7 @@ export default function AboutPage() {
                   <div className="text-sm text-gray-500">Years of Impact</div>
                 </div>
                 <div className="border-l-4 border-accent pl-4">
-                  <div className="text-2xl font-bold text-primary">100+</div>
+                  <div className="text-2xl font-bold text-primary">20+</div>
                   <div className="text-sm text-gray-500">Farmers Empowered</div>
                 </div>
               </div>
@@ -133,7 +133,7 @@ export default function AboutPage() {
               className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl"
             >
               <Image
-                src="/about1.jpg"
+                src="/tomatoe.jpg"
                 alt="Genesis Agro journey"
                 fill
                 className="object-cover"

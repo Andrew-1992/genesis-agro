@@ -10,7 +10,7 @@ export const Hero = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+          src="/tomatoe.jpg"
           alt="South Sudanese farmland at golden hour"
           fill
           className="object-cover"

@@ -16,10 +16,10 @@ const services = [
     title: 'Farming & Production',
     description: 'We engage in large-scale crop production, and livestock rearing, utilizing the best practices we recommend to our clients.',
     bgColor: 'from-primary-dark to-primary',
-    features: ['Indoor farms (Greenhouse Farming)', 'Urban Farming', 'Open Field Farming'],
+    features: ['Indoor farms (Greenhouse Farming)', 'Urban Farming', 'Bee Keeping', 'Agroforestry', 'Open Field Farming'],
   },
   {
-    title: 'Veterinary Drugs',
+    title: 'Veterinary Care, Drugs & Equipment',
     description: 'Complete veterinary care solutions including vaccines, antibiotics, and diagnostic tools for livestock health management.',
     bgColor: 'from-primary to-primary-light',
     features: ['Vaccines', 'Treatment Protocols', 'Livestock Care'],

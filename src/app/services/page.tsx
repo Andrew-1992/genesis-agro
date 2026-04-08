@@ -27,17 +27,17 @@ export default function ServicesPage() {
     {
       title: 'Farming & Production',
       description: 'Premium seeds of drought-resistant crops and organic fertilizers tailored for South Sudan\'s unique climate and soil conditions.',
-      features: ['Hybrid Seeds', 'Organic Fertilizers', 'Soil Testing'],
+      features: ['Hybrid Seeds', 'Organic Fertilizers', 'Bee Keeping', 'Agroforestry', 'Soil Testing'],
       icon: 'fas fa-seedling',
-      image: '/fertilizers.jpg',
+      image: '/farm1.jpg',
       price: 'Seasonal Rates',
     },
     {
-      title: 'Veterinary Drugs',
+      title: 'Veterinary Care, Drugs & Equipment',
       description: 'Complete veterinary care solutions including vaccines, antibiotics, and diagnostic tools for livestock health management.',
-      features: ['Vaccines', 'Treatment Protocols', 'Livestock Care'],
+      features: ['Animal Drugs, Vaccines & Equipment', 'Treatment Protocols', 'Livestock Care'],
       icon: 'fas fa-pills',
-      image: '/veterinary.jpg',
+      image: '/vet.jpg',
       price: 'Market Price',
     },
     {
@@ -45,7 +45,7 @@ export default function ServicesPage() {
       description: 'Expert training and advisory services on modern farming techniques, post-harvest handling, and sustainable practices.',
       features: ['Field Training', 'Technical Support', 'Best Practices'],
       icon: 'fas fa-chalkboard-user',
-      image: '/extension.jpg',
+      image: '/ext.jpg',
       price: 'Custom Packages',
     },
     {
@@ -53,7 +53,7 @@ export default function ServicesPage() {
       description: 'Cutting-edge research on crop improvement, climate adaptation, and innovative farming solutions for South Sudanese agriculture.',
       features: ['Crop Research', 'Climate Studies', 'Innovation Labs'],
       icon: 'fas fa-flask',
-      image: '/research.jpg',
+      image: '/res.jpg',
       price: 'Project-Based',
     },
     {
